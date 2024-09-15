@@ -6,7 +6,10 @@ import galleryImg3 from '../assets/gallery/frontImg.jpg';
 const KirimHadiah = () => {
   const [showAccount, setShowAccount] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
-  const bankAccount = "3141371299";
+  const bcaAccount = "0881865431";
+  const mandiriAccount = "133001375008";
+  const bcaHolder = "Maria Loviana";
+  const mandiriHolder = "Muhamad Aditya Prat";
   const address = "Jl. Angklung, RT012/RW04 Kecamatan. Alak - Kelurahan. Fatufeto";
 
   const backgroundImages = [
@@ -17,7 +20,6 @@ const KirimHadiah = () => {
 
   const [currentBackground, setCurrentBackground] = useState(backgroundImages[0]);
 
-  // Change background image every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBackground((prevBackground) => {
@@ -61,16 +63,34 @@ const KirimHadiah = () => {
 
         {/* Conditional Rendering of Bank Information */}
         {showAccount && (
-          <div className="bg-white bg-opacity-70 rounded-lg shadow-lg p-8 max-w-sm mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">Bank BCA</h3>
-            <p>a.n Putri Anggraini Desmona Logo</p>
-            <p>{bankAccount}</p>
-            <button 
-              onClick={() => handleCopy(bankAccount)} 
-              className="mt-4 bg-black text-white py-2 px-4 rounded"
-            >
-              Copy Rekening
-            </button>
+          <div className="bg-white bg-opacity-45 rounded-lg shadow-lg p-8 max-w-sm mx-auto fade-enter fade-enter-active">
+            {/* <h3 className="text-2xl font-semibold mb-4"></h3> */}
+
+            {/* BCA Information */}
+            <div className="mb-8">
+              <h4 className="text-xl font-semibold mb-2">Bank BCA</h4>
+              <p>a.n {bcaHolder}</p>
+              <p>{bcaAccount}</p>
+              <button 
+                onClick={() => handleCopy(bcaAccount)} 
+                className="mt-4 bg-black text-white py-2 px-4 rounded"
+              >
+                Copy Rekening BCA
+              </button>
+            </div>
+
+            {/* Mandiri Information */}
+            <div>
+              <h4 className="text-xl font-semibold mb-2">Bank Mandiri</h4>
+              <p>a.n {mandiriHolder}</p>
+              <p>{mandiriAccount}</p>
+              <button 
+                onClick={() => handleCopy(mandiriAccount)} 
+                className="mt-4 bg-black text-white py-2 px-4 rounded"
+              >
+                Copy Rekening Mandiri
+              </button>
+            </div>
 
             {/* Success Message for Copy */}
             {copySuccess && <p className="mt-2 text-green-500">{copySuccess}</p>}

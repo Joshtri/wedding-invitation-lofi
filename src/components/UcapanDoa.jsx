@@ -11,7 +11,7 @@ const UcapanDoa = ({ onAddUcapan }) => {
     try {
       const newUcapan = { nama, ucapan, kehadiran };
       // Post the data to the backend
-      const response = await axios.post('http://localhost:5000/api/ucapan-doa', newUcapan);
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/ucapan-doa`, newUcapan);
       
       // Trigger the callback to add the new comment to the list
       onAddUcapan(response.data);
@@ -29,7 +29,7 @@ const UcapanDoa = ({ onAddUcapan }) => {
   };
 
   return (
-    <div className="py-12 text-center p-4 bg-slate-300">
+    <div className="py-12 text-center p-4 bg-slate-100 bg-opacity-30">
       <h2 className="text-4xl font-bold mb-4">Ucapan & Doa</h2>
       <p className='mb-3'>Tuliskan ucapan & doa terbaikmu saat ini bagi kedua mempelai</p>
       <form onSubmit={handleConfirmation} className="max-w-lg mx-auto">
