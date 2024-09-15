@@ -12,7 +12,6 @@ import sectionImg from './assets/wedding/sectionImg.jpg';
 import WeddingInvitation from './components/WeddingInvitation';
 import WeddingEvent from './components/WeddingEventComp';
 import KirimHadiah from './components/KirimHadiah';
-import UcapanDoa from './components/UcapanDoa';
 import UcapanDoaList from './components/UcapanDoaList';
 import backgroundMusic from './assets/Back-At-One.mp3';
 
@@ -26,6 +25,19 @@ function App() {
     // Disable scrolling initially
     document.body.style.overflow = 'hidden';
     
+    // Prevent right-click context menu
+    const handleContextMenu = (e) => e.preventDefault();
+    document.addEventListener('contextmenu', handleContextMenu);
+
+    // Prevent F12 and DevTools shortcuts
+    const handleKeyDown = (e) => {
+      if (e.key === 'F12' || (e.ctrlKey && (e.key === 'I' || e.key === 'J'))) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
     // Check localStorage to determine if the invitation has been opened
     const invitationOpened = localStorage.getItem('invitationOpened');
     if (invitationOpened === 'true') {
@@ -42,6 +54,8 @@ function App() {
     return () => {
       // Cleanup: ensure overflow is reset on component unmount
       document.body.style.overflow = 'auto';
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -216,7 +230,6 @@ function App() {
             <WeddingEvent />
             <KirimHadiah />
             <GallleryComp />
-            {/* <UcapanDoa /> */}
             <UcapanDoaList />
           </>
         )}

@@ -93,16 +93,7 @@ const KirimHadiah = () => {
             </div>
 
             {/* Success Message for Copy */}
-            {copySuccess && <p className="mt-2 text-green-500">{copySuccess}</p>}
 
-            <p className="mt-8">Anda Juga Bisa Mengirim Kado Fisik Ke Alamat Berikut</p>
-            <p>{address}</p>
-            <button 
-              onClick={() => handleCopy(address)} 
-              className="mt-4 bg-black text-white py-2 px-4 rounded"
-            >
-              Copy Alamat
-            </button>
           </div>
         )}
       </div>
