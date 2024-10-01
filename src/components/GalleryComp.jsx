@@ -86,13 +86,13 @@ const GallleryComp = () => {
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content of the gallery */}
-      <div className="container mx-auto px-5  relative z-10">
+      <div className="container mx-auto px-4 sm:px-5 relative z-10">
         <h2 className="text-4xl font-bold text-center text-white mb-8" style={{ fontFamily: 'Dancing Script, cursive' }}>
           Our Wedding Gallery
         </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 p-8 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
           {currentImages.map((image, index) => (
             <div
               key={index}
