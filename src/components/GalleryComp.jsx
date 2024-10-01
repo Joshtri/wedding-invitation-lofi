@@ -26,52 +26,10 @@ import verticalImg4Third from '../assets/gallery/IMG_0211_resize.jpg';
 
 const GallleryComp = () => {
   const images = [
-    //page 1.
-    { src: verticalImgFirst, size: 'col-span-2 row-span-2' }, // Larger image
-    { src: verticalImg, size: '' }, // Normal size
-    { src: verticalImg2, size: '' }, // Normal size
-    { src: verticalImg4, size: '' }, // Normal size
-    { src: verticalImg3, size: 'col-span-2 row-span-2' }, // Normal size
-    { src: verticalBoat, size: '' }, // Normal size
-
-    //Page 2.
-    { src: vercticalImg1Sec, size: 'col-span-3 row-span-2' }, // Normal size
-    { src: vercticalImg2Sec, size: '' }, // Normal size
-    { src: vercticalImg3Sec, size: '' }, // Normal size
-    { src: vercticalImg4Sec, size: '' }, // Normal size
-    { src: vercticalImg6Sec, size: '' }, // Normal size
-    { src: vercticalImg5Sec, size: 'col-span-2 row-span-2' }, // Normal size
-
-    //page 3
-    { src: verticalImg1Third, size: 'col-span-2 row-span-2' }, // Larger image
-    { src: verticalImg3Third, size: '' }, // Normal size
-    { src: vercticalImg3Sec, size: '' }, // Normal size
-    { src: verticalImg4Third, size: '' }, // Normal size
-    { src: verticalImg2Third, size: 'col-span-2 row-span-2' }, // Normal size
-    { src: vercticalImg4Sec, size: '' }, // Normal size
+    verticalImgFirst, verticalImg, verticalImg2, verticalImg3, verticalImg4, verticalBoat,
+    vercticalImg1Sec, vercticalImg2Sec, vercticalImg3Sec, vercticalImg4Sec, vercticalImg5Sec, vercticalImg6Sec,
+    verticalImg1Third, verticalImg2Third, verticalImg3Third, verticalImg4Third
   ];
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 6;
-
-  // Calculate the current images to display
-  const indexOfLastImage = currentPage * imagesPerPage;
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
-
-  const totalPages = Math.ceil(images.length / imagesPerPage);
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
-  };
 
   return (
     <section 
@@ -91,36 +49,36 @@ const GallleryComp = () => {
           Our Wedding Gallery
         </h2>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {currentImages.map((image, index) => (
-            <div
-              key={index}
-              className={`relative overflow-hidden rounded-lg shadow-lg ${image.size}`}
-            >
-              <img src={image.src} alt={`Gallery ${index + 1}`} className="object-cover w-full h-full" />
-              <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
-            </div>
-          ))}
+        {/* Baris Atas - Scroll ke kanan */}
+        <div className="overflow-hidden">
+          <div className="flex space-x-8 animate-scroll-right">
+            {images.slice(0, 8).map((image, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden w-80 h-80 md:w-96 md:h-96 rounded-lg shadow-lg" // Ukuran gambar diperbesar
+              >
+                <img src={image} alt={`Gallery ${index + 1}`} className="object-cover w-full h-full" />
+                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center mt-8 space-x-4">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 bg-white text-black rounded-lg ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 bg-white text-black rounded-lg ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            Next
-          </button>
+        {/* Baris Bawah - Scroll ke kiri */}
+        <div className="overflow-hidden mt-8">
+          <div className="flex space-x-8 animate-scroll-left">
+            {images.slice(8, 16).map((image, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden w-80 h-80 md:w-96 md:h-96 rounded-lg shadow-lg" // Ukuran gambar diperbesar
+              >
+                <img src={image} alt={`Gallery ${index + 9}`} className="object-cover w-full h-full" />
+                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );
