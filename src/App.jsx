@@ -112,7 +112,7 @@ function App() {
   return (
     <div className="flex justify-center bg-gray-100 min-h-screen">
       <div className={`font-sans bg-white w-full max-w-[425px] ${!isInvitationOpened ? 'overflow-hidden' : ''}`}>
-        <section
+      <section
           className="relative flex items-center justify-center h-screen bg-cover bg-center"
           style={{ backgroundImage: `url(${verticalFrontImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
           ref={mainSectionRef}
@@ -124,6 +124,7 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-4xl font-bold"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
             >
               The Wedding of
             </motion.h1>
@@ -132,6 +133,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
               className="mt-2 text-5xl font-bold"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
             >
               Lovi & Aditya
             </motion.p>
@@ -140,6 +142,7 @@ function App() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
               className="mt-4 text-xl"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
             >
               20 Oktober 2024
             </motion.p>
@@ -149,11 +152,18 @@ function App() {
               transition={{ delay: 1.5, duration: 0.8 }}
               className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition"
               onClick={handleOpenInvitation}
+              style={{ fontFamily: 'EB Garamond, cursive' }}
+              
             >
               Buka Undangan
             </motion.button>
           </div>
         </section>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet"></link>
 
         <audio ref={audioRef} src={backgroundMusic} autoPlay loop>
           Your browser does not support the audio element.
@@ -161,67 +171,72 @@ function App() {
 
         {isInvitationOpened && (
           <section ref={nextSectionRef} className="relative flex items-center justify-center h-screen bg-cover bg-center">
-            <AnimatePresence>
-              <motion.div
-                key={currentImageIndex}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url(${images[currentImageIndex]})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-              </motion.div>
-            </AnimatePresence>
-            <div className="relative text-center text-white z-10">
-              <motion.h1
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-5xl font-bold mb-4"
-              >
-                Pernikahan
-              </motion.h1>
-              <motion.h3
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-2xl font-bold mb-8"
-              >
-                Minggu, 20 Oktober 2024
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                Hitung mundur menuju acara bahagia kami:
-              </motion.p>
-              <div className="grid grid-cols-4 gap-4 mt-6 p-4">
-                <div className="p-4 bg-white text-black rounded-lg shadow-md">
-                  <p className="text-3xl font-bold">{timeLeft.days || 0}</p>
-                  <p className="text-lg">Hari</p>
-                </div>
-                <div className="p-4 bg-white text-black rounded-lg shadow-md">
-                  <p className="text-3xl font-bold">{timeLeft.hours || 0}</p>
-                  <p className="text-lg">Jam</p>
-                </div>
-                <div className="p-4 bg-white text-black rounded-lg shadow-md">
-                  <p className="text-3xl font-bold">{timeLeft.minutes || 0}</p>
-                  <p className="text-lg">Menit</p>
-                </div>
-                <div className="p-4 bg-white text-black rounded-lg shadow-md">
-                  <p className="text-3xl font-bold">{timeLeft.seconds || 0}</p>
-                  <p className="text-lg">Detik </p>
-                </div>
+          <AnimatePresence>
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${images[currentImageIndex]})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+            </motion.div>
+          </AnimatePresence>
+          <div className="relative text-center text-white z-10">
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl font-bold mb-4"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
+            >
+              Pernikahan
+            </motion.h1>
+            <motion.h3
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl font-bold mb-8"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
+            >
+              Minggu, 20 Oktober 2024
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className='font-bold text-xl'
+              style={{ fontFamily: 'Dancing Script, cursive' }}
+            >
+              Hitung mundur menuju acara bahagia kami:
+            </motion.p>
+            <div className="grid grid-cols-4 gap-4 mt-6 p-4">
+              <div className="p-4 bg-white text-black rounded-lg shadow-md">
+                <p className="text-3xl font-bold" style={{ fontFamily: 'Dancing Script, cursive' }}>{timeLeft.days || 0}</p>
+                <p className="text-lg" style={{ fontFamily: 'Dancing Script, cursive' }}>Hari</p>
+              </div>
+              <div className="p-4 bg-white text-black rounded-lg shadow-md">
+                <p className="text-3xl font-bold" style={{ fontFamily: 'Dancing Script, cursive' }}>{timeLeft.hours || 0}</p>
+                <p className="text-lg" style={{ fontFamily: 'Dancing Script, cursive' }}>Jam</p>
+              </div>
+              <div className="p-4 bg-white text-black rounded-lg shadow-md">
+                <p className="text-3xl font-bold" style={{ fontFamily: 'Dancing Script, cursive' }}>{timeLeft.minutes || 0}</p>
+                <p className="text-lg" style={{ fontFamily: 'Dancing Script, cursive' }}>Menit</p>
+              </div>
+              <div className="p-4 bg-white text-black rounded-lg shadow-md">
+                <p className="text-3xl font-bold" style={{ fontFamily: 'Dancing Script, cursive' }}>{timeLeft.seconds || 0}</p>
+                <p className="text-lg" style={{ fontFamily: 'Dancing Script, cursive' }}>Detik</p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
+
         )}
 
         {isInvitationOpened && (

@@ -10,7 +10,7 @@ const KirimHadiah = () => {
   const mandiriAccount = "133001375008";
   const bcaHolder = "Maria Loviana";
   const mandiriHolder = "Muhamad Aditya Prat";
-  const address = "Jl. Angklung, RT012/RW04 Kecamatan. Alak - Kelurahan. Fatufeto";
+  // const address = "Jl. Angklung, RT012/RW04 Kecamatan. Alak - Kelurahan. Fatufeto";
 
   const backgroundImages = [
     `url(${galleryImg1})`,

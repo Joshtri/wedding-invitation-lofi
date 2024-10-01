@@ -22,7 +22,7 @@ const WeddingEvent = () => {
           <div className="bg-white bg-opacity-40 rounded-lg shadow-lg p-8 max-w-sm w-full">
             <h3 className="text-2xl font-semibold mb-4">Pemberkatan</h3>
             <p>Minggu, 20 Oktober 2024</p>
-            <p>Pukul: xx.xx WIB - Selesai</p>
+            <p>Pukul: 14.00 WIB - Selesai</p>
             <p className="mt-4 font-semibold">Lokasi Acara</p>
             <p>Griya Joglo, Blitar</p>
             <p>Jl. Bengawan Solo No.179 kel, Tanjungsari, Kec. Sukorejo, Kota Blitar, Jawa Timur 66122</p>
@@ -37,7 +37,7 @@ const WeddingEvent = () => {
           <div className="bg-white bg-opacity-40 rounded-lg shadow-lg p-8 max-w-sm w-full">
             <h3 className="text-2xl font-semibold mb-4">Resepsi</h3>
             <p>Minggu, 20 Oktober 2024</p>
-            <p>Pukul: xx.xx WIB - Selesai</p>
+            <p>Pukul: 15.00 WIB - Selesai</p>
             <p className="mt-4 font-semibold">Lokasi Acara</p>
             <p>Griya Joglo, Blitar</p>
             <p>Jl. Bengawan Solo No.179 kel, Tanjungsari, Kec. Sukorejo, Kota Blitar, Jawa Timur 66122</p>
