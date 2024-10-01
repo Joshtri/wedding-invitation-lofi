@@ -14,12 +14,29 @@ import WeddingEvent from './components/WeddingEventComp';
 import KirimHadiah from './components/KirimHadiah';
 import UcapanDoaList from './components/UcapanDoaList';
 import backgroundMusic from './assets/Back-At-One.mp3';
+import { useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
+
+
 
 function App() {
   const [isInvitationOpened, setIsInvitationOpened] = useState(false);
   const nextSectionRef = useRef(null);
   const mainSectionRef = useRef(null);
   const audioRef = useRef(null);
+
+  const location = useLocation(); // Get the location object from react-router-dom
+  const [namaTamu, setNamaTamu] = useState('Tamu Undangan'); // Default value for guest name
+
+  // Extract "to" parameter from query string
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const to = queryParams.get('to');
+    if (to) {
+      setNamaTamu(decodeURIComponent(to)); // Set the guest's name from the query string
+    }
+  }, [location]); // Re-run when location changes
+
+  1
 
   useEffect(() => {
     // Disable scrolling initially
@@ -58,6 +75,8 @@ function App() {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
+
+  
 
   useEffect(() => {
     if (isInvitationOpened) {
@@ -150,19 +169,18 @@ function App() {
               20 Oktober 2024
             </motion.p>
 
-            {/* Nama Tamu Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-              className="mt-6 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md text-white text-center w-80 mx-auto"
-            >
-              <p className="text-lg font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Kepada Yth :</p>
-              <p className="text-lg" style={{ fontFamily: 'EB Garamond, serif' }}>Bapak/Ibu/Saudara/i</p>
-              <p className="text-2xl font-bold mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>Alexa Dalton</p>
-              <p className="text-lg mt-1" style={{ fontFamily: 'EB Garamond, serif' }}>Di Tempat</p>
-            </motion.div>
-
+        {/* Nama Tamu Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="mt-6 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md text-white text-center w-80 mx-auto"
+        >
+          <p className="text-lg font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Kepada Yth :</p>
+          <p className="text-lg" style={{ fontFamily: 'EB Garamond, serif' }}>Bapak/Ibu/Saudara/i</p>
+          <p className="text-2xl font-bold mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>{namaTamu}</p>
+          <p className="text-lg mt-1" style={{ fontFamily: 'EB Garamond, serif' }}>Di Tempat</p>
+        </motion.div>
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
