@@ -30,8 +30,8 @@ const UcapanDoa = ({ onAddUcapan }) => {
 
   return (
     <div className="py-12 text-center p-4 bg-slate-100 bg-opacity-30">
-      <h2 className="text-4xl font-bold mb-4">Ucapan & Doa</h2>
-      <p className='mb-3'>Tuliskan ucapan & doa terbaikmu saat ini bagi kedua mempelai</p>
+      <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>Ucapan & Doa</h2>
+      <p className="mb-3" style={{ fontFamily: 'EB Garamond, serif' }}>Tuliskan ucapan & doa terbaikmu saat ini bagi kedua mempelai</p>
       <form onSubmit={handleConfirmation} className="max-w-lg mx-auto">
         <input
           type="text"
@@ -39,12 +39,14 @@ const UcapanDoa = ({ onAddUcapan }) => {
           onChange={(e) => setNama(e.target.value)}
           placeholder="Nama Anda"
           className="w-full p-2 mb-4 border rounded"
+          style={{ fontFamily: 'EB Garamond, serif' }}
           required
         />
         <select
           value={kehadiran}
           onChange={(e) => setKehadiran(e.target.value)}
           className="w-full p-2 mb-4 border rounded"
+          style={{ fontFamily: 'EB Garamond, serif' }}
           required
         >
           <option value="" disabled>Pilih konfirmasi kehadiran Anda</option>
@@ -58,9 +60,10 @@ const UcapanDoa = ({ onAddUcapan }) => {
           placeholder="Ucapan & Doa"
           className="w-full p-2 mb-4 border rounded"
           rows="4"
+          style={{ fontFamily: 'EB Garamond, serif' }}
           required
         />
-        <button type="submit" className="bg-black text-white py-2 px-4 rounded">
+        <button type="submit" className="bg-black text-white py-2 px-4 rounded" style={{ fontFamily: 'EB Garamond, serif' }}>
           Konfirmasi
         </button>
       </form>

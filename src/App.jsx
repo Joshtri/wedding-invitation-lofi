@@ -268,28 +268,30 @@ function App() {
 
         {/* Gift Section */}
         <motion.section
-      className="relative py-12 text-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${randomImgWedding})` }}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          className="relative py-12 text-center bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${randomImgWedding})` }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-      {/* Content */}
-      <div className="relative z-10">
-        {/* <h2 className="text-4xl font-bold mb-8">Amplop Digital</h2> */}
-        <p className='text-2xl font-bold mb-8 text-white'>
-          Semoga Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami
-        </p>
-      </div>
-    </motion.section>
+          {/* Content */}
+          <div className="relative z-10">
+            <p className="text-xl font-bold mb-8 text-white" style={{ fontFamily: 'EB Garamond, serif' }}>
+              Semoga Bapak/Ibu/Saudara/i Berkenan Hadir Untuk Memberikan Doa Restu Kepada Kami
+            </p>
+          </div>
+        </motion.section>
 
-            {/* Footer */}
-            <footer className="bg-gray-800 text-white py-6">
-          <p className="text-center">Maria & Aditya Wedding © 2024</p>
+        {/* Footer */}
+        <footer className="bg-gray-800 text-white py-6">
+          <p className="text-center" style={{ fontFamily: 'EB Garamond, serif' }}>
+            Maria & Aditya Wedding © 2024
+          </p>
         </footer>
+
       </div>
     </div>
     

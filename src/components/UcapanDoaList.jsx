@@ -58,8 +58,6 @@ const UcapanDoaList = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        {/* <h2 className="text-4xl font-bold mb-8">Ucapan & Doa</h2> */}
-
         {/* Render UcapanDoa Form */}
         <UcapanDoa onAddUcapan={handleAddUcapan} />
 
@@ -70,7 +68,7 @@ const UcapanDoaList = () => {
                 <div key={index} className="flex items-start justify-start space-x-4">
                   {/* Chat Bubble */}
                   <div className="relative bg-blue-100 text-left p-4 mb-4 border rounded-lg shadow-md w-full max-w-md mx-auto">
-                    <p className="font-bold text-lg mb-1">
+                    <p className="font-bold text-lg mb-1" style={{ fontFamily: 'Dancing Script, cursive' }}>
                       {item.nama}
                       <span className={`ms-2 inline-block px-2 py-1 text-xs font-semibold rounded-full mt-2 ${
                         item.kehadiran === 'Hadir' ? 'bg-green-100 text-green-800' : item.kehadiran === 'Tidak Hadir' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
@@ -78,7 +76,7 @@ const UcapanDoaList = () => {
                         Status: {item.kehadiran}
                       </span>
                     </p>
-                    <p className="text-gray-700">{item.ucapan}</p>
+                    <p className="text-gray-700" style={{ fontFamily: 'EB Garamond, serif' }}>{item.ucapan}</p>
 
                     {/* Chat bubble arrow */}
                     <div className="absolute top-0 left-[-8px] w-0 h-0 border-t-8 border-t-blue-100 border-l-8 border-l-transparent border-r-8 border-r-transparent"></div>
@@ -87,7 +85,7 @@ const UcapanDoaList = () => {
               ))}
             </div>
           ) : (
-            <p>Belum ada ucapan dan doa yang diterima.</p>
+            <p style={{ fontFamily: 'EB Garamond, serif' }}>Belum ada ucapan dan doa yang diterima.</p>
           )}
         </div>
 
@@ -97,6 +95,7 @@ const UcapanDoaList = () => {
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className="px-4 py-2 mx-2 bg-gray-300 text-gray-800 rounded disabled:opacity-50"
+            style={{ fontFamily: 'EB Garamond, serif' }}
           >
             Previous
           </button>
@@ -105,6 +104,7 @@ const UcapanDoaList = () => {
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`px-4 py-2 mx-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}
+              style={{ fontFamily: 'EB Garamond, serif' }}
             >
               {index + 1}
             </button>
@@ -113,6 +113,7 @@ const UcapanDoaList = () => {
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
             className="px-4 py-2 mx-2 bg-gray-300 text-gray-800 rounded disabled:opacity-50"
+            style={{ fontFamily: 'EB Garamond, serif' }}
           >
             Next
           </button>
