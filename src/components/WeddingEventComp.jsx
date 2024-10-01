@@ -1,7 +1,7 @@
 // import React from 'react';
 import { motion } from 'framer-motion';
 import 'tailwindcss/tailwind.css';
-import verticalFrontImg from '../assets/wedding/verticalFront.jpg';
+import verticalFrontImg from '../assets/gallery/IMG_0105_resize.jpg';
 
 const WeddingEvent = () => {
   return (

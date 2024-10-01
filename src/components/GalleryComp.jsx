@@ -10,60 +10,45 @@ import verticalImg4 from '../assets/gallery/IMG_0100_resize.jpg';
 import verticalBoat from '../assets/gallery/onBoat.jpg';
 import backgroundImg from '../assets/wedding-theme.png'; // Import the background image
 
-
-
 //Page TWO
-import vercticalImg1Sec from '../assets/gallery/frontImg.jpg'
+import vercticalImg1Sec from '../assets/gallery/frontImg.jpg';
 import vercticalImg2Sec from '../assets/gallery/IMG_0193_resize.jpg';
 import vercticalImg3Sec from '../assets/gallery/IMG_0204_resize.jpg';
 import vercticalImg4Sec from '../assets/gallery/sectionImg.jpg';
 import vercticalImg5Sec from '../assets/gallery/random_walk.jpg';
 import vercticalImg6Sec from '../assets/gallery/sectionImg2.jpg';
 
-
 //page THIRD
-import verticalImg1Third from '../assets/gallery/IMG_0149_resize.jpg'
-import verticalImg2Third from '../assets/gallery/IMG_0174_resize.jpg'
-import verticalImg3Third from '../assets/gallery/IMG_0209_resize.jpg'
-import verticalImg4Third from '../assets/gallery/IMG_0211_resize.jpg'
+import verticalImg1Third from '../assets/gallery/IMG_0149_resize.jpg';
+import verticalImg2Third from '../assets/gallery/IMG_0174_resize.jpg';
+import verticalImg3Third from '../assets/gallery/IMG_0209_resize.jpg';
+import verticalImg4Third from '../assets/gallery/IMG_0211_resize.jpg';
 
 const GallleryComp = () => {
   const images = [
-
     //page 1.
     { src: verticalImgFirst, size: 'col-span-2 row-span-2' }, // Larger image
     { src: verticalImg, size: '' }, // Normal size
     { src: verticalImg2, size: '' }, // Normal size
-    // { src: verticalImg3, size: '' }, // Normal size
     { src: verticalImg4, size: '' }, // Normal size
     { src: verticalImg3, size: 'col-span-2 row-span-2' }, // Normal size
     { src: verticalBoat, size: '' }, // Normal size
-    // { src: galleryImg6, size: 'col-span-2' }, // Wider image
-
 
     //Page 2.
     { src: vercticalImg1Sec, size: 'col-span-3 row-span-2' }, // Normal size
     { src: vercticalImg2Sec, size: '' }, // Normal size
     { src: vercticalImg3Sec, size: '' }, // Normal size
     { src: vercticalImg4Sec, size: '' }, // Normal size
-  
     { src: vercticalImg6Sec, size: '' }, // Normal size
     { src: vercticalImg5Sec, size: 'col-span-2 row-span-2' }, // Normal size
 
-
     //page 3
-
     { src: verticalImg1Third, size: 'col-span-2 row-span-2' }, // Larger image
     { src: verticalImg3Third, size: '' }, // Normal size
     { src: vercticalImg3Sec, size: '' }, // Normal size
-    // { src: verticalImg3, size: '' }, // Normal size
     { src: verticalImg4Third, size: '' }, // Normal size
     { src: verticalImg2Third, size: 'col-span-2 row-span-2' }, // Normal size
     { src: vercticalImg4Sec, size: '' }, // Normal size
-    // { src: galleryImg6, size: 'col-span-2' }, // Wider image
-    // { src: verticalImg3, size: '' }, // Normal size
-    // { src: galleryImg5, size: '' }, // Normal size
-    // { src: galleryImg6, size: '' }, // Wider image
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -101,11 +86,13 @@ const GallleryComp = () => {
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content of the gallery */}
-      <div className="container mx-auto px-5 relative z-10">
-        <h2 className="text-4xl font-bold text-center text-white mb-12"  style={{ fontFamily: 'Dancing Script, cursive' }}>Our Wedding Gallery</h2>
+      <div className="container mx-auto px-5  relative z-10">
+        <h2 className="text-4xl font-bold text-center text-white mb-8" style={{ fontFamily: 'Dancing Script, cursive' }}>
+          Our Wedding Gallery
+        </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 p-8 lg:grid-cols-3 gap-4">
           {currentImages.map((image, index) => (
             <div
               key={index}

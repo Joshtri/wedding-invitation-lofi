@@ -38,7 +38,7 @@ const WeddingInvitation = () => {
             </div>
             
             <div>
-              <h3 className="text-4xl font-semibold" style={{ fontFamily: 'Dancing Script, cursive', fontWeight: 700 }}>Aditya Pratama Kusumah, S.T.</h3>
+              <h3 className="text-4xl font-semibold" style={{ fontFamily: 'Dancing Script, cursive', fontWeight: 700 }}>M. Aditya Pratama Kusumah, S.T.</h3>
               <p className="text-lg" style={{ fontFamily: 'EB Garamond, serif', fontSize: '1.125rem' }}>Putra ke-1 dari Bapak Dhany Ramdhany, M.Hum & Ibu Siti Rachmah</p>
             </div>
           </motion.section>

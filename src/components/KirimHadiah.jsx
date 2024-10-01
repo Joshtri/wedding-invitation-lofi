@@ -98,7 +98,7 @@ const KirimHadiah = () => {
 
             {/* E-Wallet Information */}
             <div className="relative">
-              <h4 className="text-2xl font-semibold mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>E-Wallet</h4>
+              <h4 className="text-2xl font-semibold mb-2" style={{ fontFamily: 'Dancing Script, cursive' }}>ShopeePay</h4>
               <p style={{ fontFamily: 'EB Garamond, serif' }}>a.n {eWalletHolder}</p>
               <p style={{ fontFamily: 'EB Garamond, serif' }}>{eWalletAccount}</p>
               <button 
@@ -106,7 +106,7 @@ const KirimHadiah = () => {
                 className="mt-4 bg-black text-white py-2 px-4 rounded"
                 style={{ fontFamily: 'EB Garamond, serif' }}
               >
-                Salin Nomor E-Wallet 
+                Salin Nomor ShopeePay
               </button>
 
               {/* Success Notification */}
