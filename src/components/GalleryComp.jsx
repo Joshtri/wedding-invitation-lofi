@@ -43,9 +43,9 @@ const GallleryComp = () => {
 
     //page 3
     { src: verticalImg1Third }, // Normal size
-    { src: verticalImg3Third }, // Normal size
+    // { src: verticalImg3Third }, // Normal size
     { src: vercticalImg3Sec }, // Normal size
-    { src: verticalImg4Third }, // Normal size
+    // { src: verticalImg4Third }, // Normal size
     { src: verticalImg2Third }, // Normal size
     { src: vercticalImg4Sec }, // Normal size
   ];
