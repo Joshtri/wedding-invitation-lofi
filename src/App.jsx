@@ -132,67 +132,80 @@ function App() {
     <div className="flex justify-center bg-gray-100 min-h-screen">
       <div className={`font-sans bg-white w-full max-w-[425px] ${!isInvitationOpened ? 'overflow-hidden' : ''}`}>
       <section
-          className="relative flex items-center justify-center h-screen bg-cover bg-center"
-          style={{ backgroundImage: `url(${verticalFrontImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-          ref={mainSectionRef}
-        >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+  className="relative flex items-center justify-center h-screen bg-cover bg-center"
+  style={{ backgroundImage: `url(${verticalFrontImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+  ref={mainSectionRef}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black opacity-50"></div>
 
-          {/* Content */}
-          <div className="relative text-center text-white">
-            <motion.h1
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl font-bold"
-              style={{ fontFamily: 'Dancing Script, cursive' }}
-            >
-              The Wedding of
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-2 text-5xl font-bold"
-              style={{ fontFamily: 'Dancing Script, cursive' }}
-            >
-              Lovi & Aditya
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="mt-4 text-xl"
-              style={{ fontFamily: 'Dancing Script, cursive' }}
-            >
-              20 Oktober 2024
-            </motion.p>
+  {/* Content */}
+  <div className="relative text-center text-white">
+    <motion.h1
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-4xl font-bold"
+      style={{ fontFamily: 'Dancing Script, cursive' }}
+    >
+      The Wedding of
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
+      className="mt-2 text-5xl font-bold"
+      style={{ fontFamily: 'Dancing Script, cursive' }}
+    >
+      Lovi & Aditya
+    </motion.p>
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 0.8 }}
+      className="mt-4 text-xl"
+      style={{ fontFamily: 'Dancing Script, cursive' }}
+    >
+      20 Oktober 2024
+    </motion.p>
 
-        {/* Nama Tamu Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="mt-6 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md text-white text-center w-80 mx-auto"
-        >
-          <p className="text-lg font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Kepada Yth :</p>
-          <p className="text-lg" style={{ fontFamily: 'EB Garamond, serif' }}>Bapak/Ibu/Saudara/i</p>
-          <p className="text-2xl font-bold mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>{namaTamu}</p>
-          <p className="text-lg mt-1" style={{ fontFamily: 'EB Garamond, serif' }}>Di Tempat</p>
-        </motion.div>
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-              className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition"
-              onClick={handleOpenInvitation}
-              style={{ fontFamily: 'EB Garamond, cursive' }}
-            >
-              Buka Undangan
-            </motion.button>
-          </div>
-        </section>
+    {/* Nama Tamu Card */}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.5, duration: 0.8 }}
+      className="mt-6 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md text-white text-center w-80 mx-auto"
+    >
+      <p className="text-lg font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Kepada Yth :</p>
+      <p className="text-lg" style={{ fontFamily: 'EB Garamond, serif' }}>Bapak/Ibu/Saudara/i</p>
+      <p className="text-2xl font-bold mt-2" style={{ fontFamily: 'Dancing Script, cursive' }}>{namaTamu}</p>
+      <p className="text-lg mt-1" style={{ fontFamily: 'EB Garamond, serif' }}>Di Tempat</p>
+    </motion.div>
+
+    <motion.button
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.5, duration: 0.8 }}
+      className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full shadow hover:bg-gray-200 transition"
+      onClick={handleOpenInvitation}
+      style={{ fontFamily: 'EB Garamond, cursive' }}
+    >
+      Buka Undangan
+    </motion.button>
+
+    {/* Hashtag Section */}
+    <motion.p
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 2, duration: 0.8 }}
+      className="mt-8 text-2xl font-semibold"
+      style={{ fontFamily: 'Dancing Script, cursive' }}
+    >
+      #ADaywithLOve
+    </motion.p>
+  </div>
+</section>
+
 
 
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
