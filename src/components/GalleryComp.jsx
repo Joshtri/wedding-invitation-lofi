@@ -26,29 +26,28 @@ import verticalImg4Third from '../assets/gallery/IMG_0211_resize.jpg';
 
 const GallleryComp = () => {
   const images = [
-    //page 1.
-    { src: verticalImgFirst, size: 'col-span-2 row-span-2' }, // Larger image
-    { src: verticalImg, size: '' }, // Normal size
-    { src: verticalImg2, size: '' }, // Normal size
-    { src: verticalImg4, size: '' }, // Normal size
-    { src: verticalImg3, size: 'col-span-2 row-span-2' }, // Normal size
-    { src: verticalBoat, size: '' }, // Normal size
+    { src: verticalImgFirst }, // Normal size
+    { src: verticalImg }, // Normal size
+    { src: verticalImg2 }, // Normal size
+    { src: verticalImg4 }, // Normal size
+    { src: verticalImg3 }, // Normal size
+    { src: verticalBoat }, // Normal size
 
     //Page 2.
-    { src: vercticalImg1Sec, size: 'col-span-3 row-span-2' }, // Normal size
-    { src: vercticalImg2Sec, size: '' }, // Normal size
-    { src: vercticalImg3Sec, size: '' }, // Normal size
-    { src: vercticalImg4Sec, size: '' }, // Normal size
-    { src: vercticalImg6Sec, size: '' }, // Normal size
-    { src: vercticalImg5Sec, size: 'col-span-2 row-span-2' }, // Normal size
+    { src: vercticalImg1Sec }, // Normal size
+    { src: vercticalImg2Sec }, // Normal size
+    { src: vercticalImg3Sec }, // Normal size
+    { src: vercticalImg4Sec }, // Normal size
+    { src: vercticalImg6Sec }, // Normal size
+    { src: vercticalImg5Sec }, // Normal size
 
     //page 3
-    { src: verticalImg1Third, size: 'col-span-2 row-span-2' }, // Larger image
-    { src: verticalImg3Third, size: '' }, // Normal size
-    { src: vercticalImg3Sec, size: '' }, // Normal size
-    { src: verticalImg4Third, size: '' }, // Normal size
-    { src: verticalImg2Third, size: 'col-span-2 row-span-2' }, // Normal size
-    { src: vercticalImg4Sec, size: '' }, // Normal size
+    { src: verticalImg1Third }, // Normal size
+    { src: verticalImg3Third }, // Normal size
+    { src: vercticalImg3Sec }, // Normal size
+    { src: verticalImg4Third }, // Normal size
+    { src: verticalImg2Third }, // Normal size
+    { src: vercticalImg4Sec }, // Normal size
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,16 +60,8 @@ const GallleryComp = () => {
 
   const totalPages = Math.ceil(images.length / imagesPerPage);
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    }
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -92,11 +83,11 @@ const GallleryComp = () => {
         </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {currentImages.map((image, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden rounded-lg shadow-lg ${image.size}`}
+              className={`relative overflow-hidden rounded-lg shadow-lg aspect-w-1 aspect-h-1`}
             >
               <img src={image.src} alt={`Gallery ${index + 1}`} className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
@@ -104,22 +95,19 @@ const GallleryComp = () => {
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center mt-8 space-x-4">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 bg-white text-black rounded-lg ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 bg-white text-black rounded-lg ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            Next
-          </button>
+        {/* Numbered Pagination */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+            <button
+              key={pageNumber}
+              onClick={() => handlePageClick(pageNumber)}
+              className={`px-4 py-2 bg-white text-black rounded-lg ${
+                currentPage === pageNumber ? 'bg-blue-500 text-slate-500' : 'hover:bg-gray-300'
+              }`}
+            >
+              {pageNumber}
+            </button>
+          ))}
         </div>
       </div>
     </section>
