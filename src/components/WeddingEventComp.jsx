@@ -22,7 +22,7 @@ const WeddingEvent = () => {
           <div className="bg-white bg-opacity-40 rounded-lg shadow-lg p-8 max-w-sm w-full">
             <h3 className="text-3xl font-semibold mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>Pemberkatan</h3>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Minggu, 20 Oktober 2024</p>
-            <p style={{ fontFamily: 'EB Garamond, serif' }}>Pukul: 14.00 WIB - 15.00 WIB</p>
+            <p style={{ fontFamily: 'EB Garamond, serif' }}>Pukul: 14.00 - 15.00 WIB</p>
             <p className="mt-4 font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Lokasi Acara</p>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Griya Joglo, Blitar</p>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Jl. Bengawan Solo No.179 kel, Tanjungsari, Kec. Sukorejo, Kota Blitar, Jawa Timur 66122</p>
@@ -37,7 +37,7 @@ const WeddingEvent = () => {
           <div className="bg-white bg-opacity-40 rounded-lg shadow-lg p-8 max-w-sm w-full">
             <h3 className="text-3xl font-semibold mb-4" style={{ fontFamily: 'Dancing Script, cursive' }}>Resepsi</h3>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Minggu, 20 Oktober 2024</p>
-            <p style={{ fontFamily: 'EB Garamond, serif' }}>Pukul: 15.00 WIB - 18.00 WIB</p>
+            <p style={{ fontFamily: 'EB Garamond, serif' }}>Pukul: 15.00 - 18.00 WIB</p>
             <p className="mt-4 font-semibold" style={{ fontFamily: 'EB Garamond, serif' }}>Lokasi Acara</p>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Griya Joglo, Blitar</p>
             <p style={{ fontFamily: 'EB Garamond, serif' }}>Jl. Bengawan Solo No.179 kel, Tanjungsari, Kec. Sukorejo, Kota Blitar, Jawa Timur 66122</p>
