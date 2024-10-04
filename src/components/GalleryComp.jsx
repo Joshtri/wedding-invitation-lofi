@@ -21,8 +21,8 @@ import vercticalImg6Sec from '../assets/gallery/sectionImg2.jpg';
 //page THIRD
 import verticalImg1Third from '../assets/gallery/IMG_0149_resize.jpg';
 import verticalImg2Third from '../assets/gallery/IMG_0174_resize.jpg';
-import verticalImg3Third from '../assets/gallery/IMG_0209_resize.jpg';
-import verticalImg4Third from '../assets/gallery/IMG_0211_resize.jpg';
+import verticalImgNew from '../assets/gallery/newImg.jpg';
+import verticalImgNew2 from '../assets/gallery/NewImg2.jpg';
 
 const GallleryComp = () => {
   const images = [
@@ -34,15 +34,19 @@ const GallleryComp = () => {
     { src: verticalBoat }, // Normal size
 
     //Page 2.
-    { src: vercticalImg1Sec }, // Normal size
-    { src: vercticalImg2Sec }, // Normal size
+    { src: verticalImgNew }, // Normal size
+    { src: verticalImgNew2 }, // Normal size
+
     { src: vercticalImg3Sec }, // Normal size
     { src: vercticalImg4Sec }, // Normal size
     { src: vercticalImg6Sec }, // Normal size
     { src: vercticalImg5Sec }, // Normal size
 
     //page 3
+    { src: vercticalImg1Sec }, // Normal size
+    { src: vercticalImg2Sec }, // Normal size
     { src: verticalImg1Third }, // Normal size
+
     // { src: verticalImg3Third }, // Normal size
     { src: vercticalImg3Sec }, // Normal size
     // { src: verticalImg4Third }, // Normal size
